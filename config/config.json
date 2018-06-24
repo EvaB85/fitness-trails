@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "fitness-trails",
+    "database": "fitness_trails",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "fitness-trails",
+    "database": "fitness_trails",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "fitness-trails",
+    "database": "fitness_trails",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
