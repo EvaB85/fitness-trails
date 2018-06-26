@@ -7,3 +7,20 @@ module.exports = function(req, res, next) {
     next();
   }
 }
+
+/////////
+
+// var req = {
+//   header: {
+//     stuff: 'stuff'
+//   },
+//   body: {
+//     dataOne: 'data stuff',
+//     dataTwo: 'more data',
+//     dataThree: 'titty mcgee'
+//   },
+//   user: {
+//     username: 'eva',
+//     sessionId: 213832827
+//   }
+// };

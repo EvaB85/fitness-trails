@@ -3,6 +3,8 @@ var db = require('../models');
 var passport = require('../config/passportConfig');
 var router = express.Router();
 
+router.use(express.static(__dirname + '../../public'));
+
 // GET /auth/signup - sends the form for signup
 router.get('/signup', function(req, res) {
   res.render('auth/signup');
@@ -16,7 +18,7 @@ router.get('/login', function(req, res) {
 // POST /auth/signup - the route that processes the signup form
 router.post('/signup', function(req, res) {
   // This looks up the user in the DB
-  console.log('start')
+  console.log('in post /signup');
   db.user.findOrCreate({
     where: {email: req.body.email},
     defaults: {
