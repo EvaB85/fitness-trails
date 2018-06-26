@@ -3,6 +3,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  padding-left: 0;
+  padding-right: 0;
 }
 .navbar {
   background: black;
@@ -34,4 +36,29 @@ color: yellow;
 
 .email, .password {
   font-size: 20px;
+}
+
+#box1 {
+  background: #355e78;
+  opacity: 0.6;
+  height: 40em;
+}
+
+#box2 {
+  background: #558b6c;
+  opacity: 0.6;
+  height: 40em;
+}
+
+#box3 {
+  background: #355e78;
+  opacity: 0.6;
+  height: 10em;
+}
+
+#box4 {
+  background: #558b6c;
+  opacity: 0.6;
+  height: 10em;
+
 }
