@@ -45,9 +45,6 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
-});
 
 // Routes
 app.use('/auth', require('./controllers/auth'));
