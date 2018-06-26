@@ -6,7 +6,7 @@ body {
 }
 .navbar {
   background: black;
-  position: fixed;
+  /* position: fixed; */
 }
 a {
   color: yellow;
