@@ -8,3 +8,7 @@
   <input id="state-input" type="text" name="state" required>
   <button type="submit">Submit</button>
 </form>
+
+<% searchResults.forEach(function(result) { %>
+  <p><%= result.name %></p>
+<% }); %>
