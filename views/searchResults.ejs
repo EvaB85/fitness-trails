@@ -11,4 +11,6 @@
 
 <% searchResults.forEach(function(result) { %>
   <p><%= result.name %></p>
+  <p><%= result.activities[0].activity_type_name %></p>
+  <hr />
 <% }); %>

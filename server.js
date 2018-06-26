@@ -48,19 +48,18 @@ app.get('/', function(req, res) {
 });
 
 app.get('/search', function(req, res) {
-  var results = null;
   unirest.get("https://trailapi-trailapi.p.mashape.com/?limit=10&q[city_cont]=" + req.query.city + "&q[state_cont]=" +
   req.query.state)
     .header("X-Mashape-Key", process.env.API_KEY)
     .header("Accept", "text/plain")
     .end(function (result) {
-      results = result.body.places
-      console.log('results------------', results);
-      res.render('searchResults', {searchResults: results});
+      console.log('----------------result.body.places------------', result.body.places);
+      console.log('#######################')
+      console.log('NEW THING TO LOOK AT FOR --each-- ITEM IN THE ARRAY')
+      console.log('-------result.body.places[0].activities example-------', result.body.places[0].activities)
+      console.log('#######################')
+      res.render('searchResults', {searchResults: result.body.places});
     });
-    // pass data to the front
-    // console.log('results-----', results);
-  // res.render('searchResults', {searchResults: results});
 });
 
 // Routes
