@@ -12,3 +12,8 @@ a {
 form input, form button {
   color: black;
 }
+
+.signup, .profile {
+  font-size: 25px;
+  color: red;
+}
