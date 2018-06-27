@@ -48,7 +48,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/search', function(req, res) {
-  unirest.get("https://trailapi-trailapi.p.mashape.com/?limit=10&q[city_cont]=" + req.query.city + "&q[state_cont]=" +
+  unirest.get("https://trailapi-trailapi.p.mashape.com/?limit=20&q[city_cont]=" + req.query.city + "&q[state_cont]=" +
   req.query.state)
     .header("X-Mashape-Key", process.env.API_KEY)
     .header("Accept", "text/plain")
