@@ -53,11 +53,11 @@ app.get('/search', function(req, res) {
     .header("X-Mashape-Key", process.env.API_KEY)
     .header("Accept", "text/plain")
     .end(function (result) {
-      console.log('----------------result.body.places------------', result.body.places);
-      console.log('#######################')
-      console.log('NEW THING TO LOOK AT FOR --each-- ITEM IN THE ARRAY')
-      console.log('-------result.body.places[0].activities example-------', result.body.places[0].activities)
-      console.log('#######################')
+      // console.log('----------------result.body.places------------', result.body.places);
+      // console.log('#######################')
+      // console.log('NEW THING TO LOOK AT FOR --each-- ITEM IN THE ARRAY')
+      // console.log('-------result.body.places[0].activities example-------', result.body.places[0].activities)
+      // console.log('#######################')
       res.render('searchResults', {searchResults: result.body.places});
     });
 });
@@ -65,6 +65,8 @@ app.get('/search', function(req, res) {
 // Routes
 app.use('/auth', require('./controllers/auth'));
 app.use('/profile', require('./controllers/profile'));
+app.use('/trail', require('./controllers/trail'));
+
 
 var server = app.listen(process.env.PORT || 3000);
 

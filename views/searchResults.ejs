@@ -10,9 +10,11 @@
 </form>
 
 <% searchResults.forEach(function(result) { %>
-  <p><%= result.name %></p>
+  <a class="trail-name-link" href="/trail" data-trail="<%= JSON.stringify(result) %>"><p><%= result.name %></p></a>
   <% if(result.activities.length > 0) { %>
     <p><%= result.activities[0].activity_type_name %></p>
+    <p><%= result.description %></p>
+    <p><%= result.directions %></p>
   <% } %>
   <hr />
 <% }); %>
