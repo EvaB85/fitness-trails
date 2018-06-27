@@ -5,8 +5,8 @@ $('a.trail-name-link').on('click', function(e) {
   var directions = $(this).attr('data-directions');
   var description = $(this).attr('data-description');
   var activityType = $(this).attr('data-activity-type');
-  console.log('HERE IS TRAILDATA FROM THE FRONT', trailData)
-  axios.get('/trail/' + name, { name, directions, description, activityType })
+  console.log('HERE IS NAME FROM THE FRONT', name)
+  axios.post('/trail/' + name, { name, directions, description, activityType })
     .then(function(result) {
       console.log('here is RESULT RESULT RESULT RESULT', result);
     });
