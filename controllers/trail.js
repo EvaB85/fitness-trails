@@ -7,8 +7,9 @@ var isLoggedIn = require('../middleware/isLoggedIn');
 
 router.use(express.static(__dirname + '../../public'));
 
-router.post('/', function(req, res) {
-  var trailData = JSON.parse(req.body);
+// GET /trail/:name - returns a single trail to show
+router.get('/:name', function(req, res) {
+  var trailData = req.body;
   // var trailData = req.body;
   console.log('##############trailData#################', trailData);
   console.log('^#^#^#^#^#^#^#^#^#^# trailData.city', trailData.city)
@@ -17,10 +18,21 @@ router.post('/', function(req, res) {
 });
 
 
+// didn't want to push all data into the url
+// router.get('/', function(req, res) {
+//   var trailData = req.body;
+//   // var trailData = req.body;
+//   console.log('##############trailData#################', trailData);
+//   console.log('^#^#^#^#^#^#^#^#^#^# trailData.city', trailData.city)
+//   // res.render('trails/show');
+//   res.send('yay');
+// });
+
+
 module.exports = router;
 
 
+
+
 // router for all routes that are /trail
-
-
 // hidden inputs or long list of data
