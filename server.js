@@ -9,6 +9,8 @@ var passport = require('./config/passportConfig');
 var isLoggedIn = require('./middleware/isLoggedIn');
 var flash = require('connect-flash');
 var unirest = require('unirest');
+var request = require('request')
+var geocoder = require('geocoder');
 
 var app = express();
 
@@ -48,19 +50,27 @@ app.get('/', function(req, res) {
 });
 
 app.get('/search', function(req, res) {
-  unirest.get("https://trailapi-trailapi.p.mashape.com/?limit=20&q[city_cont]=" + req.query.city + "&q[state_cont]=" +
-  req.query.state)
-    .header("X-Mashape-Key", process.env.API_KEY)
-    .header("Accept", "text/plain")
-    .end(function (result) {
-      // console.log('----------------result.body.places------------', result.body.places);
-      // console.log('#######################')
-      // console.log('NEW THING TO LOOK AT FOR --each-- ITEM IN THE ARRAY')
-      // console.log('-------result.body.places[0].activities example-------', result.body.places[0].activities)
-      // console.log('#######################')
-      res.render('searchResults', {searchResults: result.body.places});
+  var city = req.body.city;
+  var state = req.body.state;
+  var distance = req.body.distance;
+  var address = city + ", " + state;
+  //use Geocoder to get Lat / Lng of user based on entered city(req.body.city), state(req.body.state)
+  //Pass geocoder information into new API (below)
+  //update form to get max distance
+  geocoder.geocode(address, function(err, data) {
+    if (err) return err;
+    console.log('inGEOcoder!$$$$$$$$$$$$$$$$$', data.results[0].geometry)
+    var lat = data.results[0].geometry.location.lat;
+    var lng = data.results[0].geometry.location.lng;
+    request("https://www.hikingproject.com/data/get-trails?lat="+ lat +"&lon="+ lng +"&maxDistance="+ distance +"&key=" + process.env.HIKING_PROJECT_KEY, function(error, response, body) {
+      var data = JSON.parse(body);
+      console.log('<:)<:)<:)<:)<:)<:)ICE CREAAAAAAAAAMMMMMMMM!!!!<:)<:)<:)<:)<:)<:)<:)<:)<:)');
+      console.log('data', data.trails);
+      res.render('searchResults', {searchResults: data.trails})
     });
+  });
 });
+
 
 // Routes
 app.use('/auth', require('./controllers/auth'));
