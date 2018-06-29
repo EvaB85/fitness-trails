@@ -1,6 +1,12 @@
 
 <h1>Hello, <%= user.name %></h1>
 
+<% trails.forEach(function(trail) { %>
+  <p><%= trail.name %></p>
+<% }); %>
+
+<hr />
+
 <h3>My Favorite Biking Trails</h>
   <div class="row">
 

@@ -56,7 +56,7 @@ app.get('/search', function(req, res) {
   var address = city + ", " + state;
   geocoder.geocode(address, function(err, data) {
     if (err) return err;
-    console.log('$$$$$$$$$$$inGEOcoder$$$$$$$$$$$$$$$$$', data.results[0].geometry)
+    // console.log('$$$$$$$$$$$inGEOcoder$$$$$$$$$$$$$$$$$', data.results[0].geometry)
     var lat = data.results[0].geometry.location.lat;
     var lng = data.results[0].geometry.location.lng;
     var url = "https://www.hikingproject.com/data/get-trails?lat="+ lat +"&lon="+ lng +"&maxDistance="+ distance +"&key=" + process.env.HIKING_PROJECT_KEY;
@@ -74,6 +74,7 @@ app.get('/search', function(req, res) {
 // Routes
 app.use('/auth', require('./controllers/auth'));
 app.use('/profile', require('./controllers/profile'));
+// should be trails
 app.use('/trail', require('./controllers/trail'));
 
 

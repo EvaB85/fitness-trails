@@ -1,0 +1,7 @@
+
+<% trail.forEach(function(trail) { %>
+  <a href="/profile/<%= trail.id %>"> <%= trail.name %> </a>
+  <a class="btn btn-primary delete" href="/trail/<%= trail.id %>">DELETE</a>
+<% }); %>
+
+<!--NEED to see if this page was done correctly  -->

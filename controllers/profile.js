@@ -9,32 +9,27 @@ router.use(express.static(__dirname + '../../public'));
 
 // GET /auth/profile - sends the form to any single profile
 router.get('/', isLoggedIn, function(req, res) {
-  console.log('req.user', req.user)
-  res.render('profile/profile', {user: req.user});
+  db.user.find({
+    where: {id: req.user.id}
+    // use user b/c we found a user
+  }).then(function(user) {
+    user.getTrails().then(function(trails) {
+// %%%%%%%%%%requery the api for each id!!%%%%%%next step
+
+      res.render('profile/profile', {
+        user: user,
+        trails: trails
+      });
+    });
+  });
 });
 
-// DELETE /auth/profile - deletes one favorite item from the listen**
+
+
+// DELETE /auth/profile - deletes one favorite item from the list**
 router.delete('trails/:name', function(req, res) {
   var trailToDelete = req.params.name;
   res.send({message: 'You have successfully deleted the trail'});
 });
 
-$('.delete-link').on('click', function(e) {
-  e.preventDefault();
-  var teamElement = $(this);
-  var teamUrl = teamElement.attr('href');
-  $.ajax({
-    method: 'DELETE',
-    url: teamUrl
-  }).done(function(data) {
-    // get data returned from the DELETE route
-    console.log(data);
-
-    // do stuff when the DELETE action is complete
-    teamElement.remove();
-
-    // or, you can redirect to another page
-    window.location = '/teams';
-  });
-});
 module.exports = router;

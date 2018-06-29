@@ -8,7 +8,7 @@ module.exports = function(req, res, next) {
   }
 }
 
-/////////
+/////////BELOW IS FOR STUDYING..DELETE BEFORE SUMBITTING!
 
 // var req = {
 //   header: {

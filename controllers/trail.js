@@ -30,12 +30,14 @@ router.post('/', isLoggedIn, function(req, res) {
       uniqueTrailId: req.body.trailId
     }
   }).spread(function(trail, created) {
+    console.log('~~~~~~~~~~~~CREATED?: ', created)
     db.user.find({
       where: {id: req.user.id}
       // user we found
     }).then(function(user, created) {
       // add a trail
       user.addTrail(trail).then(function(trail) {
+        console.log('KYLE REDIRECT')
         // req.flash('success', "Added to Favorites' list");
         // redirecting them to the same page (pass an actual value, actual page they are on)
         res.redirect('/trail/' + req.body.trailId);
