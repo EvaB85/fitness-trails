@@ -44,6 +44,11 @@ router.post('/', isLoggedIn, function(req, res) {
   });
 });
 
+// need profiles page to show my Favorites**********
+// i need an EDIT and a PUT and delete********
+// change the users email CRUD , NEED PUT route edit...edit the user's name or email
+// make my SHOW page display all info i want
+// results page display all info I want **********
 
 // all our trail routes
 

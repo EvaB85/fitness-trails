@@ -15,7 +15,7 @@
 </form>
 
 <% searchResults.forEach(function(result) { %>
-  <!-- click on anquor tag - GET request to it's href /trail/7834962 (see controllers) -->
+  <!-- click on anchor tag - GET request to it's href /trail/7834962 (see controllers) -->
   <a class="trail-name-link" href="/trail/<%= result.id %>">
     <p><%= result.name %></p>
   </a>
@@ -26,7 +26,7 @@
     <p><%= result.url %></p>
   </a>
 
-  <img src="<%= result.imgMedium %>" />
+  <img src="<%= result.imgSmallMed %>" />
   <p><%= result.length %></p>
   <p><%= result.high %></p>
   <hr />
