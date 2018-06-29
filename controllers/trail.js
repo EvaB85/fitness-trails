@@ -22,6 +22,27 @@ router.get('/:id', function(req, res){
   });
 });
 
+// POST /trail
+router.post('/', isLoggedIn, function(req, res) {
+  // saving a trail (favorite)
+  db.trail.findOrCreate({
+    where: {
+      uniqueTrailId: req.body.trailId
+    }
+  }).spread(function(trail, created) {
+    db.user.find({
+      where: {id: req.user.id}
+      // user we found
+    }).then(function(user, created) {
+      // add a trail
+      user.addTrail(trail).then(function(trail) {
+        // req.flash('success', "Added to Favorites' list");
+        // redirecting them to the same page (pass an actual value, actual page they are on)
+        res.redirect('/trail/' + req.body.trailId);
+      });
+    })
+  });
+});
 
 
 // all our trail routes

@@ -4,8 +4,11 @@
 
  <!-- Fill out this page with more trailData -->
 
-<form action="/trails" method="POST">
-  <input name="trailId" type="hidden" value="trailData.id">
-  <input name="userId" type="hidden" value="howtograb the user id.id">
-
+<form action="/trail" method="POST">
+  <input name="trailId" type="hidden" value="<%= trailData.id %>">
+  <button type="submit" name="button">Add to Favorites</button>
 </form>
+
+
+<!-- before our favorites list route we have to make models -->
+<!-- need to check the validation for logged in -->
