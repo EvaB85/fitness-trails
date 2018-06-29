@@ -1,6 +1,11 @@
-<h1></h1>
-<p>
-  My favorite Trails
-</p>
+<h1><%= trailData.name %></h1>
+<p>Summary:</p>
+<p><%= trailData.summary %></p>
 
-<p>Name of Trail: <%= trail.name %></p>
+ <!-- Fill out this page with more trailData -->
+
+<form action="/trails" method="POST">
+  <input name="trailId" type="hidden" value="trailData.id">
+  <input name="userId" type="hidden" value="howtograb the user id.id">
+
+</form>

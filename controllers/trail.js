@@ -18,7 +18,7 @@ router.get('/:id', function(req, res){
     console.log('##############################################################');
     console.log('data', data);
                                 // this data is representing ONE trail we name it trail NOT trails
-    res.render('trails/show', {trail: data.trails[0]})
+    res.render('trails/show', {trailData: data.trails[0]})
   });
 });
 
