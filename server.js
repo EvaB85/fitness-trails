@@ -50,19 +50,21 @@ app.get('/', function(req, res) {
 });
 
 app.get('/search', function(req, res) {
-  var city = req.body.city;
-  var state = req.body.state;
-  var distance = req.body.distance;
+  var city = req.query.city;
+  var state = req.query.state;
+  var distance = req.query.distance;
   var address = city + ", " + state;
   //use Geocoder to get Lat / Lng of user based on entered city(req.body.city), state(req.body.state)
   //Pass geocoder information into new API (below)
   //update form to get max distance
   geocoder.geocode(address, function(err, data) {
     if (err) return err;
-    console.log('inGEOcoder!$$$$$$$$$$$$$$$$$', data.results[0].geometry)
+    // console.log('inGEOcoder!$$$$$$$$$$$$$$$$$', data.results[0].geometry)
     var lat = data.results[0].geometry.location.lat;
     var lng = data.results[0].geometry.location.lng;
-    request("https://www.hikingproject.com/data/get-trails?lat="+ lat +"&lon="+ lng +"&maxDistance="+ distance +"&key=" + process.env.HIKING_PROJECT_KEY, function(error, response, body) {
+    var url = "https://www.hikingproject.com/data/get-trails?lat="+ lat +"&lon="+ lng +"&maxDistance="+ distance +"&key=" + process.env.HIKING_PROJECT_KEY;
+    // console.log("this is the url: ", url);
+    request(url, function(error, response, body) {
       var data = JSON.parse(body);
       console.log('<:)<:)<:)<:)<:)<:)ICE CREAAAAAAAAAMMMMMMMM!!!!<:)<:)<:)<:)<:)<:)<:)<:)<:)');
       console.log('data', data.trails);
