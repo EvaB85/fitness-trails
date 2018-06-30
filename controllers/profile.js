@@ -27,10 +27,7 @@ router.get('/', isLoggedIn, function(req, res) {
         var data = JSON.parse(body);
         console.log('##############################################################');
         console.log('data', data);
-        res.render('profile/profile', {
-          user: user,
-          trails: data.trails
-        });
+        res.render('profile/profile', {user: user, trails: data.trails});
       });
     });
   });
