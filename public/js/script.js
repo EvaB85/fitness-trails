@@ -1,11 +1,11 @@
-$('.delete-link').on('click', function(e) {
+$('.delete-trail').on('click', function(e) {
   e.preventDefault();
   var url = $(this).attr('href')
   $.ajax({
     method: 'DELETE',
     url: url
   }).done(function(data) {
-    window.location = '/profile'
+    window.location = '/profile/';
   });
 });
 

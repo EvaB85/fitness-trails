@@ -33,12 +33,38 @@ router.get('/', isLoggedIn, function(req, res) {
   });
 });
 
-
-
 // DELETE /auth/profile - deletes one favorite item from the list**
-router.delete('trails/:name', function(req, res) {
-  var trailToDelete = req.params.name;
-  res.send({message: 'You have successfully deleted the trail'});
-});
+// deleting from our database..see above...access with db.modelname.function
+// function is find create delete etc
+router.delete('/trail/:id', function(req, res) {
+  console.log('in DELETE$$$$$$$$$');
+  db.trail.find({
+    where: {
+      uniqueTrailId: req.params.id
+    }
+  }).then(function(trail) {
+    db.trailsUsers.destroy({
+      where: {
+        trailId: trail.id,
+        userId: req.user.id
+      }
+    }).then(function(data) {
+      console.log(data);
+      console.log('~~~~~~~~~ DELETED entry ~~~~~~~~')
+      res.sendStatus(200);
+      // res.redirect('/profile/' + req.user.id));
+      });
+    });
+  });
+
+
+// log in to multiple users and FAVORITE THE SAME TRAIL
+// then delete the trail from ONE user
+// make sure the trail is still on the other user's profile pages
+
+// also look up the Sequelize help function for deleting a record off a join table
+
+// work on styling and adding all the info you want on the profile page
+// do NOT delete the for each...you can move it, but don't delete it 
 
 module.exports = router;

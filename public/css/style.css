@@ -77,11 +77,19 @@ color: yellow;
 
 h4 {
   background: teal;
+  padding: 0.3em;
   border-radius: 2em;
   margin-top: 5em;
 }
 
-.container {
+/*Not working- adjust materialize margin  */
+/* .container {
   margin-left: 2em;
   margin-right: 2em;
-}
+} */
+/* 
+.navbar {
+  opacity: 0.8;
+  border-color: white;
+  border: solid;
+} */

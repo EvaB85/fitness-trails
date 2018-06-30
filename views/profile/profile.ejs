@@ -2,12 +2,23 @@
 <h1>Hello, <%= user.name %></h1>
 <hr />
 
+<% if(trails) {%>
+  <% trails.forEach(function(trail) { %>
+    <p><%= trail.name %></p>
+    <!-- a anchor does a GET request, but we want a delete request -->
+    <a class="delete-trail" href="/profile/trail/<%= trail.id %>">Delete Trail</a>
+
+    <!--added need to check-->
+    <p><%= trail.imgSmallMed %></p>
+  <% }); %>
+<% } %>
+
 <h3>My Favorite Biking Trails</h>
   <div class="row">
 
     <div id="box3" class="col s12 m6 l6">
     </div>
-    
+
     <div id="box4" class="col s12 m6 l6">
     </div>
 
