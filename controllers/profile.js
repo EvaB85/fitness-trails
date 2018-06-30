@@ -58,13 +58,13 @@ router.delete('/trail/:id', function(req, res) {
   });
 
 
-// log in to multiple users and FAVORITE THE SAME TRAIL
-// then delete the trail from ONE user
-// make sure the trail is still on the other user's profile pages
+
+
+
 
 // also look up the Sequelize help function for deleting a record off a join table
 
 // work on styling and adding all the info you want on the profile page
-// do NOT delete the for each...you can move it, but don't delete it 
+// do NOT delete the for each...you can move it, but don't delete it
 
 module.exports = router;
