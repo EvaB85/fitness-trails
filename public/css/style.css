@@ -85,6 +85,14 @@ h4 {
 .img-wrapper {
   position: relative;
 }
+
+.img-wrapper img {
+  position: absolute;
+}
+
+.img-wrapper a {
+  position: absolute;
+}
 /*Not working- adjust materialize margin  */
 /* .container {
   margin-left: 2em;

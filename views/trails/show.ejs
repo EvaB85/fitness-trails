@@ -1,20 +1,29 @@
 <h1><%= trailData.name %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="img-wrapper">
+        <img src="<%= trailData.imgSmallMed %>" />
 
-<div class="img-wrapper">
-  <img src="<%= trailData.imgSmallMed %>" />
+        <a target="_blank" class="trail-url" href="<%= trailData.url %>">
+          <i class="fas fa-map-marked-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
-  <a target="_blank" class="trail-url" href="<%= trailData.url %>">
-    <i class="fas fa-map-marked-alt"></i>
-  </a>
+  <div class="row">
+    <div class="col s12">
+      <p>Trail Summary: <%= trailData.summary %></p>
+      <p>Level of Difficulty: <%= trailData.difficulty %></p>
+      <p>Rating: <%= trailData.stars %></p>
+      <p><%= trailData.location %></p>
+      <p><%= trailData.length %> miles</p>
+
+      <form action="/trail" method="POST">
+        <input name="trailId" type="hidden" value="<%= trailData.id %>">
+        <button type="submit" name="button">Add to Favorites</button>
+      </form>
+    </div>
+  </div>
 </div>
-
-<p>Trail Summary: <%= trailData.summary %></p>
-<p>Level of Difficulty: <%= trailData.difficulty %></p>
-<p>Rating: <%= trailData.stars %></p>
-<p><%= trailData.location %></p>
-<p><%= trailData.length %> miles</p>
-
-<form action="/trail" method="POST">
-  <input name="trailId" type="hidden" value="<%= trailData.id %>">
-  <button type="submit" name="button">Add to Favorites</button>
-</form>
