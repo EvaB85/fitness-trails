@@ -8,7 +8,7 @@ var isLoggedIn = require('../middleware/isLoggedIn');
 
 router.use(express.static(__dirname + '../../public'));
 
-// GET /auth/profile - sends the form to any single profile
+// GET /profile - sends the form to any single profile
 router.get('/', isLoggedIn, function(req, res) {
   db.user.find({
     where: {id: req.user.id}
@@ -33,9 +33,13 @@ router.get('/', isLoggedIn, function(req, res) {
   });
 });
 
-// DELETE /auth/profile - deletes one favorite item from the list**
-// deleting from our database..see above...access with db.modelname.function
-// function is find create delete etc
+// GET /profile/edit - route to edit page
+router.get('/edit', function(req, res) {
+  res.render('profile/update', {user: req.user});
+});
+
+
+// DELETE /profile/trail/:id - deleting a join table entry
 router.delete('/trail/:id', function(req, res) {
   console.log('in DELETE$$$$$$$$$');
   db.trail.find({

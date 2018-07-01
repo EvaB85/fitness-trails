@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 var express = require('express');
+var rowdy = require('rowdy-logger');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -14,6 +15,9 @@ var geocoder = require('geocoder');
 
 var app = express();
 
+// var rowdyResults = rowdy.begin(app);
+rowdy.begin(app);
+
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
@@ -21,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/public'));
+
 
 
 //1. THIS NEEDS to come before your app.use passport
@@ -77,7 +82,9 @@ app.use('/profile', require('./controllers/profile'));
 // should be trails
 app.use('/trail', require('./controllers/trail'));
 
-
-var server = app.listen(process.env.PORT || 3000);
+var server = app.listen(process.env.PORT || 3000, function() {
+    // rowdyResults.print();
+    rowdy.print();
+});
 
 module.exports = server;
