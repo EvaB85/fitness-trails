@@ -61,7 +61,18 @@ router.delete('/trail/:id', function(req, res) {
     });
   });
 
-
+// PUT /profile/edit - editing user name and email
+router.put('/edit', function(req, res) {
+  db.user.update({
+    name: req.body.name
+  }, {
+    where: {
+      id: req.user.id
+    }
+  }).then(function(user) {
+    res.sendStatus(200);
+  });
+});
 
 
 

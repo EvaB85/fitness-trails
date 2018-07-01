@@ -82,12 +82,15 @@ h4 {
   margin-top: 5em;
 }
 
+.img-wrapper {
+  position: relative;
+}
 /*Not working- adjust materialize margin  */
 /* .container {
   margin-left: 2em;
   margin-right: 2em;
 } */
-/* 
+/*
 .navbar {
   opacity: 0.8;
   border-color: white;

@@ -1,14 +1,20 @@
 <h1><%= trailData.name %></h1>
-<p>Summary:</p>
-<p><%= trailData.summary %></p>
-<p><%= trailData.type %></p>
 
- <!-- Fill out this page with more trailData -->
+<div class="img-wrapper">
+  <img src="<%= trailData.imgSmallMed %>" />
+
+  <a target="_blank" class="trail-url" href="<%= trailData.url %>">
+    <i class="fas fa-map-marked-alt"></i>
+  </a>
+</div>
+
+<p>Trail Summary: <%= trailData.summary %></p>
+<p>Level of Difficulty: <%= trailData.difficulty %></p>
+<p>Rating: <%= trailData.stars %></p>
+<p><%= trailData.location %></p>
+<p><%= trailData.length %> miles</p>
 
 <form action="/trail" method="POST">
   <input name="trailId" type="hidden" value="<%= trailData.id %>">
   <button type="submit" name="button">Add to Favorites</button>
 </form>
-
-
-<!-- need to check the validation for logged in -->

@@ -13,7 +13,7 @@
 
   <button type="submit">Submit</button>
 </form>
-
+<!-- for each only for arrays -->
 <% searchResults.forEach(function(result) { %>
   <!-- click on anchor tag - GET request to it's href /trail/7834962 (see controllers) -->
   <a class="trail-name-link" href="/trail/<%= result.id %>">
@@ -23,7 +23,7 @@
   <p><%= result.summary %></p>
 
   <a target="_blank" class="trail-url" href="<%= result.url %>">
-    <p><%= result.url %></p>
+    <i class="fas fa-map-marked-alt"></i>
   </a>
 
   <img src="<%= result.imgSmallMed %>" />
