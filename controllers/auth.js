@@ -28,19 +28,15 @@ router.post('/signup', function(req, res) {
   }).spread(function(user, created) {
     console.log('spread', user, created)
     if (created) {
-      //No record was found, so we created one
       passport.authenticate('local', {
-        // redirect to activites page not profile for new users
         successRedirect: '/',
         successFlash: 'Account created and loggin in!'
       })(req, res);
     } else {
-      // We found a record, so they can't use that email
       req.flash('error', 'Email already exists!');
       res.redirect('/auth/signup');
     }
   }).catch(function(error) {
-    // catch any additional errors
     console.log(error.message);
     req.flash('error', error.message);
     res.redirect('/auth/signup');

@@ -1,6 +1,4 @@
-// listening for the click on anchor--prevents preventDefault
-// sends AJAX DELETE request to the route in the anchor's href attribute
-// the URL contains the trail id for the backend to grab
+// DELETE request to the route in the anchor's href attribute
 $('.delete-trail').on('click', function(e) {
   e.preventDefault();
   var url = $(this).attr('href')
@@ -12,9 +10,7 @@ $('.delete-trail').on('click', function(e) {
   });
 });
 
-// listening for the submit event on the form
-// preventing default -- sending AJAX PUT request with the data from the form
-// sending to the route in the form's action attribute
+// PUT request with the data from the form; sending to the route in the form's action attribute
 $('.edit-form').on('submit', function(e) {
   e.preventDefault();
   var url = $(this).attr('action');

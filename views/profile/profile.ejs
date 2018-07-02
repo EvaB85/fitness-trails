@@ -1,54 +1,14 @@
-
-<h1>Hello, <%= user.name %></h1>
-<a class="edit-link" href="/profile/edit">Edit</a>
+<h1>Hello <%= user.name %>,</h1>
+<a class="edit-link" href="/profile/edit">Edit your user name</a>
 <hr />
 <i class="fas fa-map-marked-alt"></i>
-<% if(trails) {%>
-  <% trails.forEach(function(trail) { %>
-    <p><%= trail.name %></p>
-    <a class="delete-trail" href="/profile/trail/<%= trail.id %>">Delete Trail</a>
-  <% }); %>
-<% } %>
-<div class="map"></div>
 
-<h3>My Favorite Biking Trails</h>
-  <div class="row">
-
-    <div id="box3" class="col s12 m6 l6">
-    </div>
-
-    <div id="box4" class="col s12 m6 l6">
-    </div>
-
-  </div>
-
-<h3>My Favorite Hiking Trails</h3>
-
-  <div class="row">
-
-    <div id="box1" class="col s12 m6 l6">
-    </div>
-
-    <div id="box2" class="col s12 m6 l6">
-    </div>
-
-  </div>
-
-  <!-- profile info? comments?  -->
-  <div class="col s12 m8 offset-m2 l6 offset-l3">
-    <div class="card-panel grey lighten-5 z-depth-1">
-      <div class="row valign-wrapper">
-        <div class="col s2">
-          <img src="https://images.unsplash.com/photo-1517172527855-d7a4feea491b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=24a7d5f22b1661f3d15ae74b5aca1b15&auto=format&fit=crop&w=2100&q=80" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-        </div>
-        <div class="col s10">
-          <span class="black-text">
-            User Name: Adel <br>
-            <br>"Hi my name is Adel and I like to hike on the weekends. I am best when I am with companions. I have a 5 year old german shepard that enjoys the hikes too. If you are intereted in coming along on some seattle trails, don't hesitate to join us."
-
-            <!-- This is a square image. Add the "circle" class to it to make it appear circular. -->
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="fav-list">
+  <% if(trails) {%>
+    <% trails.forEach(function(trail) { %>
+      <p><%= trail.name %></p>
+      <a class="delete-trail" href="/profile/trail/<%= trail.id %>">Delete Trail</a>
+    <% }); %>
+  <% } %>
+  <div class="map"></div>
+</div>

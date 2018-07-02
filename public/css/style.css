@@ -101,7 +101,7 @@ h4 {
   position: absolute;
 }
 
-.one-result {
+.one-result, .fav-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
