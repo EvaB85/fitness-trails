@@ -32,12 +32,12 @@ End: My final steps was to check all my routes and make sure that was the best f
 Sequel, Express, EJS, Postgres,
 
 ## Wireframe Sketches:
-![alt text](/wireframe1.png)
-![alt text](/wireframe2.png)
-![alt text](/wireframe3.png)
+![Wireframeimg1](/wireframe1.png)
+![Wireframeimg2](/wireframe2.png)
+![Wireframeimg3](/wireframe3.png)
 
 ## Routes:
-![alt text](/routes.png)
+![routes](/routes.png)
 
 ## Model User:
 Associations : Has many trails/belongs to one user
