@@ -6,14 +6,17 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
+
 .navbar {
   background: black;
-  /* position: fixed; */
+  display: block;
 }
+
 a {
   color: yellow;
 }
-form button{
+
+form button {
   color: black;
   background: grey;
 }
@@ -28,19 +31,21 @@ form input {
   padding-left: .5em;
   padding-right: .5em;
 }
-.home, .login, .logout {
 
-font-size: 25px;
-color: yellow;
+.home, .login, .logout {
+  font-size: 25px;
+  color: yellow;
 }
 
 .email, .password {
   font-size: 20px;
 }
+
 #box1, #box2, #box3, #box4 {
   border-radius: 2em;
   position: relative;
 }
+
 #box1 {
   background: #355e78;
   opacity: 0.6;
@@ -84,23 +89,58 @@ h4 {
 
 .img-wrapper {
   position: relative;
+  display: block;
 }
 
 .img-wrapper img {
-  position: absolute;
+  position: relative;
+  border: solid black;
+  border-radius: 2em;
 }
 
 .img-wrapper a {
   position: absolute;
 }
-/*Not working- adjust materialize margin  */
-/* .container {
-  margin-left: 2em;
-  margin-right: 2em;
-} */
-/*
-.navbar {
-  opacity: 0.8;
-  border-color: white;
-  border: solid;
-} */
+
+.one-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: .1em solid lightsteelblue;
+  background: rgba(64, 130, 104);
+  margin-bottom: 2em;
+  margin-top: 4em;
+  border-radius: 1em;
+  padding-bottom: 2em;
+  padding top: 2em;
+}
+
+.select-one-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: .1em solid lightsteelblue;
+  background: rgba(64, 130, 104);
+  margin-bottom: 2em;
+  margin-top: 4em;
+  border-radius: 1em;
+  padding-bottom: 2em;
+  padding top: 2em;
+}
+
+.trail-name {
+  font-size: 3em;
+  color: #000b44;
+}
+
+.img-result {
+  border: solid black;
+}
+
+.summary-result {
+  font-size: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+}

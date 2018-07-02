@@ -3,18 +3,22 @@
   <div class="row">
     <div class="col s12">
       <div class="img-wrapper">
-        <img src="<%= trailData.imgSmallMed %>" />
+        <% if (trailData.imgSmallMed) { %>
+          <img src="<%= trailData.imgSmallMed %>" />
+        <% } %>
 
-        <a target="_blank" class="trail-url" href="<%= trailData.url %>">
-          <i class="fas fa-map-marked-alt"></i>
-        </a>
+          <a target="_blank" class="trail-url" href="<%= trailData.url %>">
+            <i class="fas fa-map-marked-alt">Click <br>to view <br>map</i>
+          </a>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col s12">
+    <div class="one-result col s12">
+      <% if (trailData.summary) { %>
       <p>Trail Summary: <%= trailData.summary %></p>
+      <% } %>
       <p>Level of Difficulty: <%= trailData.difficulty %></p>
       <p>Rating: <%= trailData.stars %></p>
       <p><%= trailData.location %></p>
