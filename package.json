@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "lint:js": "node_modules/eslint/bin/eslint.js ./ ./**/*.js --fix; exit 0",
     "lint:css": "node_modules/csslint/cli.js public/css/; exit 0",
     "test": "NODE_ENV=test node_modules/mocha/bin/mocha"
@@ -40,6 +40,7 @@
     "request": "^2.87.0",
     "rowdy-logger": "0.0.2",
     "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0",
     "unirest": "^0.5.1"
   }
 }
