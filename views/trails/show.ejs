@@ -1,4 +1,4 @@
-<h1><%= trailData.name %></h1>
+<h1 class="one-trail-name"><%= trailData.name %></h1>
 <div class="container">
   <div class="row">
     <div class="col s12">
@@ -8,16 +8,16 @@
         <% } %>
 
           <a target="_blank" class="trail-url" href="<%= trailData.url %>">
-            <i class="fas fa-map-marked-alt">Click <br>to view <br>map</i>
+            <i class="fas fa-map-marked-alt"> view map</i>
           </a>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="one-result col s12">
+    <div class=" one-result one-result col s12">
       <% if (trailData.summary) { %>
-      <p>Trail Summary: <%= trailData.summary %></p>
+      <p><%= trailData.summary %></p>
       <% } %>
       <p>Level of Difficulty: <%= trailData.difficulty %></p>
       <p>Rating: <%= trailData.stars %></p>
@@ -26,7 +26,7 @@
 
       <form action="/trail" method="POST">
         <input name="trailId" type="hidden" value="<%= trailData.id %>">
-        <button type="submit" name="button">Add to Favorites</button>
+        <button class="add-fav-button" type="submit" name="button">Add to Favorites</button>
       </form>
     </div>
   </div>

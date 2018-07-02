@@ -89,7 +89,6 @@ h4 {
 
 .img-wrapper {
   position: relative;
-  display: block;
 }
 
 .img-wrapper img {
@@ -119,7 +118,6 @@ h4 {
 .select-one-result {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   border: .1em solid lightsteelblue;
   background: rgba(64, 130, 104);
@@ -143,4 +141,12 @@ h4 {
   font-size: 2em;
   padding-left: 2em;
   padding-right: 2em;
+}
+
+.one-trail-name {
+  padding-left: 0;
+}
+
+.add-fav-button {
+  background: yellow;
 }
