@@ -1,14 +1,16 @@
 <h1>Hello <%= user.name %>,</h1>
-<a class="edit-link" href="/profile/edit">Edit your user name</a>
-<hr />
-<i class="fas fa-map-marked-alt"></i>
+<div class="profile-body">
+  <a class="edit-link" href="/profile/edit">Edit your user name</a>
+  <hr />
+  <i class="fas fa-map-marked-alt"></i>
 
-<div class="fav-list">
-  <% if(trails) {%>
-    <% trails.forEach(function(trail) { %>
-      <p><%= trail.name %></p>
-      <a class="delete-trail" href="/profile/trail/<%= trail.id %>">Delete Trail</a>
-    <% }); %>
-  <% } %>
-  <div class="map"></div>
+  <div class="fav-list">
+    <% if(trails) {%>
+      <% trails.forEach(function(trail) { %>
+        <p><%= trail.name %></p>
+        <a class="delete-trail" href="/profile/trail/<%= trail.id %>">Delete Trail</a>
+      <% }); %>
+    <% } %>
+    <div class="map"></div>
+  </div>
 </div>

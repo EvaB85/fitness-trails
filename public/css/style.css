@@ -7,11 +7,6 @@ body {
   padding-right: 0;
 }
 
-.navbar {
-  background: black;
-  display: block;
-}
-
 a {
   color: yellow;
 }
@@ -23,6 +18,28 @@ form button {
 
 form input {
   color: white;
+}
+
+h4 {
+  background: teal;
+  padding: 0.3em;
+  border-radius: 2em;
+  margin-top: 5em;
+}
+
+.flex-container, .navbar {
+  padding: 0;
+}
+
+.app-name {
+font-style: italic;
+font-size: 2em;
+}
+
+.navbar {
+  /* background: rgba(0,0,0,.6); */
+  background: rgba(20, 62, 80, .7);
+  display: block;
 }
 
 .signup, .profile {
@@ -78,13 +95,6 @@ form input {
   opacity: 0.8;
   border-color: white;
   border: solid;
-}
-
-h4 {
-  background: teal;
-  padding: 0.3em;
-  border-radius: 2em;
-  margin-top: 5em;
 }
 
 .img-wrapper {
@@ -149,4 +159,15 @@ h4 {
 
 .add-fav-button {
   background: yellow;
+}
+
+.profile-body {
+  background: rgba(3, 41, 69, .6);
+  border: solid white;
+  padding: 0 10em;
+  border-radius: 2em;
+}
+
+.layout-body, .navbar {
+  padding: 0 2em;
 }

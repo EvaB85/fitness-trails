@@ -1,6 +1,7 @@
 # Fitness Trail
 
-## Link to App
+## Link to Live Site
+https://fitness-trails.herokuapp.com/
 
 ## Describe the app:
 This app is for users to keep a list of their favorite hiking trails. It's a place to have access to the trail difficulty, elevation, directions, and more. They are able to create a unique user id and connect with other users that share the love of hiking.
@@ -32,9 +33,9 @@ End: My final steps was to check all my routes and make sure that was the best f
 Sequel, Express, EJS, Postgres,
 
 ## Wireframe Sketches:
-![Wireframeimg1](/wireframe1.png)
-![Wireframeimg2](/wireframe2.png)
-![Wireframeimg3](/wireframe3.png)
+![Wireframeimg1](./img/wireframe1.png)
+![Wireframeimg2](./img/wireframe2.png)
+![Wireframeimg3](./img/wireframe3.png)
 
 ## Routes:
 ![routes](/routes.png)
